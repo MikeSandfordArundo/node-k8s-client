@@ -252,7 +252,7 @@ class Kubectl
         }
 
         flags = flags || []
-        const action = ['scale', '--replicas=' + replicas, 'replicationcontrollers', name].concat(flags)
+        const action = ['scale', '--replicas=' + replicas, this.type, name].concat(flags)
 
         return this.command(action, done)
     }
